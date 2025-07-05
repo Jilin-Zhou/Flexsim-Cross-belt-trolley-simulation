@@ -1,0 +1,25 @@
+Object current = ownerobject(c);
+Object item = param(1);
+int port = param(2);
+
+
+{ // ************* PickOption Start ************* //
+/***popup:SetLabel*/
+/**设置标签*/
+Object involved = /** \nObject: *//***tag:object*//**/item/**/;
+string labelname = /** \nLabel: *//***tag:label*//**/"Type"/**/;
+
+
+// 检查item内是否有子节点 (即内容)
+if (item.subnodes.length > 0) {
+    // 获取第一个子节点的引用
+    treenode subNode = item.first;
+
+    // 获取子节点的"Type"标签值
+    // Variant是一种可以存储不同数据类型的变量
+    Variant subNodeType = subNode.labels["Type"].value;
+
+    Variant value = /** \nValue: *//***tag:value*//**/subNodeType/**/;
+    involved.labels.assert(labelname).value = value;
+}
+} // ******* PickOption End ******* //

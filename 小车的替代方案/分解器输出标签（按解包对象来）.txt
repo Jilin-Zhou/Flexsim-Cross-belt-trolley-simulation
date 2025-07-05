@@ -1,0 +1,19 @@
+Object current = ownerobject(c);
+Object item = param(1);
+int port = param(2);
+
+// 检查 item 的 Type 标签是否为 14
+if (item.labels.assert("Type").value == 14)
+{
+    // ************* PickOption Start ************* //
+    /***popup:SetLabel*/
+    /**设置标签*/
+    Object involved = /** \nObject: *//***tag:object*//**/item/**/;
+    string labelname = /** \nLabel: *//***tag:label*//**/"Type"/**/;
+    Variant value = /** \nValue: *//***tag:value*//**/1/**/;
+
+
+    involved.labels.assert(labelname).value = value;
+    // ******* PickOption End ******* //
+}
+
